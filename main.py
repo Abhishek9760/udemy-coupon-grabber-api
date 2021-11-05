@@ -5,6 +5,10 @@ app = FastAPI()
 
 @app.get('/')
 async def home():
+    return {'message': 'welcome'}
+
+@app.get('/data')
+async def coupons():
     scraper_obj  = ComidocScraper()
     g = scraper_obj.get_recent_courses()
     data = []
